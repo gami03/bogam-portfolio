@@ -30,6 +30,12 @@ export function Hero() {
         aria-hidden
         className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(161,161,170,0.12),_transparent_55%)]"
       />
+      <div
+        aria-hidden
+        className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center"
+      >
+        <div className="h-[300px] w-[500px] rounded-full bg-blue-500/10 blur-[120px]" />
+      </div>
 
       <Container className="relative flex flex-col gap-8 py-24">
         <motion.div
@@ -50,7 +56,7 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-3xl break-keep text-4xl font-semibold leading-tight text-zinc-100 sm:text-5xl"
+          className="max-w-3xl break-keep text-3xl font-semibold leading-tight text-zinc-100 sm:text-4xl lg:text-5xl"
         >
           {heroContent.headlinePrefix}
           <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
@@ -72,20 +78,25 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.3 }}
-          className="flex flex-wrap items-center gap-4"
+          className="flex flex-col items-stretch gap-4 sm:w-auto sm:flex-row sm:flex-wrap sm:items-center"
         >
-          <Button href="#projects" variant="primary">
+          <Button href="#projects" variant="primary" className="w-full sm:w-auto">
             프로젝트 둘러보기
             <ArrowDown size={16} />
           </Button>
-          <Button href={siteMeta.resumeUrl} download variant="secondary">
+          <Button
+            href={siteMeta.resumeUrl}
+            download
+            variant="secondary"
+            className="w-full sm:w-auto"
+          >
             <Download size={16} />
             이력서 다운로드
           </Button>
           <button
             type="button"
             onClick={handleCopyEmail}
-            className="inline-flex items-center justify-center gap-2 rounded-full border border-zinc-800 bg-transparent px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors duration-200 hover:border-zinc-600 hover:bg-zinc-900"
+            className="inline-flex w-full items-center justify-center gap-2 rounded-full border border-zinc-800 bg-transparent px-5 py-2.5 text-sm font-medium text-zinc-200 transition-colors duration-200 hover:border-zinc-600 hover:bg-zinc-900 sm:w-auto"
           >
             {copied ? <Check size={16} /> : <Copy size={16} />}
             {copied ? "이메일 복사됨" : "이메일 복사"}
