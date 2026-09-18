@@ -42,6 +42,7 @@ export interface ExperienceItem {
   domain: string;
   period: string;
   highlights: string[];
+  stack: string[];
 }
 
 export interface SkillCategory {
@@ -113,10 +114,11 @@ export const experience: ExperienceItem[] = [
     domain: "국방 정보화 시스템 개발 및 운영",
     period: "2023.07 — 현재",
     highlights: [
-      "보안 규정 및 까다로운 요구사항을 준수하는 고신뢰성 웹 기능 및 서비스 구축",
-      "MSSQL 복잡 쿼리 튜닝 및 대용량 조회 트래픽 최적화를 통한 성능 병목 개선",
-      "폐쇄망 및 제약된 인프라 환경에서의 안정적인 비즈니스 로직 설계 및 시스템 유지보수",
+      "해군 주요 함정 운용 지원 정보화 시스템 개발 및 기능 개선 담당",
+      "군 보안 및 망분리 규정을 준수하는 고신뢰성 웹 서비스 아키텍처 구현",
+      "실무 현장 요구사항 분석 기반의 UI/API 기능 추가 및 시스템 안정화 유지보수",
     ],
+    stack: ["C#", "ASP.NET", "MSSQL", "IIS"],
   },
 ];
 

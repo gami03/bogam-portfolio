@@ -27,25 +27,40 @@ export function Experience() {
             >
               <span className="absolute -left-[2.15rem] top-1.5 h-3 w-3 rounded-full border-2 border-zinc-950 bg-zinc-500" />
 
-              <div className="flex flex-wrap items-baseline justify-between gap-2">
-                <h3 className="text-lg font-semibold text-zinc-100">
-                  {item.role}
-                </h3>
-                <span className="text-sm text-zinc-500">{item.period}</span>
-              </div>
-              <p className="mt-1 text-sm text-zinc-500">{item.domain}</p>
+              <div className="rounded-xl border border-zinc-800 bg-zinc-900/50 p-6">
+                <div className="flex flex-wrap items-baseline justify-between gap-2">
+                  <h3 className="text-lg font-semibold text-zinc-100">
+                    {item.role}
+                  </h3>
+                  <span className="text-sm text-zinc-500">{item.period}</span>
+                </div>
+                <p className="mt-1 break-keep text-sm text-zinc-500">
+                  {item.domain}
+                </p>
 
-              <ul className="mt-4 flex flex-col gap-2">
-                {item.highlights.map((highlight) => (
-                  <li
-                    key={highlight}
-                    className="flex gap-2 text-sm text-zinc-400"
-                  >
-                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
-                    {highlight}
-                  </li>
-                ))}
-              </ul>
+                <ul className="mt-4 flex flex-col gap-2">
+                  {item.highlights.map((highlight) => (
+                    <li
+                      key={highlight}
+                      className="flex gap-2 break-keep text-sm text-zinc-400"
+                    >
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
+                      {highlight}
+                    </li>
+                  ))}
+                </ul>
+
+                <div className="mt-5 flex flex-wrap gap-1.5 border-t border-zinc-800 pt-5">
+                  {item.stack.map((tech) => (
+                    <span
+                      key={tech}
+                      className="rounded-full bg-zinc-800/70 px-3 py-1 text-xs text-zinc-300"
+                    >
+                      {tech}
+                    </span>
+                  ))}
+                </div>
+              </div>
             </motion.li>
           ))}
         </ol>
