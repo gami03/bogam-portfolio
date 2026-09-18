@@ -45,8 +45,12 @@ export interface ExperienceItem {
   stack: string[];
 }
 
+export type SkillIconKey = "database" | "layout" | "tool" | "award";
+
 export interface SkillCategory {
   category: string;
+  icon: SkillIconKey;
+  description: string;
   items: string[];
 }
 
@@ -124,22 +128,32 @@ export const experience: ExperienceItem[] = [
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: "Backend",
+    category: "Backend & Data",
+    icon: "database",
+    description: "고신뢰성 비즈니스 로직 및 트랜잭션, 데이터베이스 쿼리 튜닝",
     items: ["C#", "ASP.NET", "MSSQL", "IIS"],
   },
   {
     category: "Frontend",
-    items: ["JavaScript", "HTML/CSS", "TypeScript", "Next.js", "Tailwind CSS"],
+    icon: "layout",
+    description: "모던 웹 UI 컴포넌트 설계 및 반응형 인터랙션",
+    items: ["JavaScript", "TypeScript", "Next.js", "HTML/CSS", "Tailwind CSS"],
   },
   {
-    category: "Tooling",
-    items: ["Git", "Vercel"],
+    category: "Environment & Tools",
+    icon: "tool",
+    description: "보안 망 인프라 대응 및 현대적 CI/CD 배포 워크플로우",
+    items: ["Git", "GitHub", "Vercel", "폐쇄망/망분리 환경"],
   },
-];
-
-export const certifications: string[] = [
-  "정보처리기사",
-  "SQLD",
-  "ADsP",
-  "SW_L5",
+  {
+    category: "Certifications",
+    icon: "award",
+    description: "공인 소프트웨어 기술 및 데이터 분석 역량 검증",
+    items: [
+      "정보처리기사 (2026)",
+      "SW_L5 (2025)",
+      "ADsP (2024)",
+      "SQLD (2023)",
+    ],
+  },
 ];
