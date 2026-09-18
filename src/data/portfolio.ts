@@ -130,8 +130,9 @@ export const skillCategories: SkillCategory[] = [
   {
     category: "Backend & Data",
     icon: "database",
-    description: "고신뢰성 비즈니스 로직 및 트랜잭션, 데이터베이스 쿼리 튜닝",
-    items: ["C#", "ASP.NET", "MSSQL", "IIS"],
+    description:
+      "고신뢰성 비즈니스 로직 및 트랜잭션 처리, Java·Python을 아우르는 유연한 개발 역량",
+    items: ["C#", "ASP.NET", "MSSQL", "Java", "Python", "IIS"],
   },
   {
     category: "Frontend",
