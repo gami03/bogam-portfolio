@@ -2,12 +2,11 @@
 
 import { useState } from "react";
 import { motion } from "framer-motion";
-import { Check, Copy, Download, Sparkles } from "lucide-react";
+import { ArrowDown, Check, Copy, Download } from "lucide-react";
 import { heroContent, siteMeta } from "@/data/portfolio";
 import { Container } from "@/components/ui/Container";
 import { Badge } from "@/components/ui/Badge";
 import { Button } from "@/components/ui/Button";
-import { GithubIcon } from "@/components/ui/icons";
 
 export function Hero() {
   const [copied, setCopied] = useState(false);
@@ -39,7 +38,10 @@ export function Hero() {
           transition={{ duration: 0.5 }}
         >
           <Badge variant="accent">
-            <Sparkles size={12} />
+            <span className="relative flex h-2 w-2">
+              <span className="absolute inline-flex h-full w-full animate-pulse rounded-full bg-emerald-400" />
+              <span className="relative inline-flex h-2 w-2 rounded-full bg-emerald-400" />
+            </span>
             {heroContent.availabilityBadge}
           </Badge>
         </motion.div>
@@ -48,16 +50,20 @@ export function Hero() {
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-3xl text-4xl font-semibold leading-tight text-zinc-50 sm:text-5xl"
+          className="max-w-3xl break-keep text-4xl font-semibold leading-tight text-zinc-100 sm:text-5xl"
         >
-          {heroContent.headline}
+          {heroContent.headlinePrefix}
+          <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
+            {heroContent.headlineHighlight}
+          </span>
+          {heroContent.headlineSuffix}
         </motion.h1>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}
           animate={{ opacity: 1, y: 0 }}
           transition={{ duration: 0.5, delay: 0.2 }}
-          className="max-w-2xl text-lg text-zinc-400"
+          className="max-w-2xl break-keep text-lg text-zinc-400"
         >
           {heroContent.subheadline}
         </motion.p>
@@ -68,18 +74,13 @@ export function Hero() {
           transition={{ duration: 0.5, delay: 0.3 }}
           className="flex flex-wrap items-center gap-4"
         >
-          <Button href={siteMeta.resumeUrl} download variant="primary">
+          <Button href="#projects" variant="primary">
+            프로젝트 둘러보기
+            <ArrowDown size={16} />
+          </Button>
+          <Button href={siteMeta.resumeUrl} download variant="secondary">
             <Download size={16} />
             이력서 다운로드
-          </Button>
-          <Button
-            href={siteMeta.github}
-            target="_blank"
-            rel="noreferrer noopener"
-            variant="secondary"
-          >
-            <GithubIcon className="h-4 w-4" />
-            GitHub 프로필
           </Button>
           <button
             type="button"
