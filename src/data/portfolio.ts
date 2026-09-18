@@ -20,28 +20,24 @@ export interface HeroContent {
   availabilityBadge: string;
   headline: string;
   subheadline: string;
-  primaryCta: { label: string; href: string };
-  secondaryCta: { label: string; href: string };
 }
 
 export interface Project {
   id: string;
   title: string;
+  category: string;
   period: string;
   summary: string;
-  problem: string;
-  solution: string;
-  result: string;
+  highlights: string[];
   stack: string[];
   links?: { label: string; href: string }[];
 }
 
 export interface ExperienceItem {
   id: string;
-  company: string;
   role: string;
+  domain: string;
   period: string;
-  location?: string;
   highlights: string[];
 }
 
@@ -51,12 +47,11 @@ export interface SkillCategory {
 }
 
 export const siteMeta: SiteMeta = {
-  name: "Bogam Yoon",
-  role: "Frontend / Web Developer",
+  name: "윤보감",
+  role: "Web & Full-Stack Developer",
   location: "Seoul, South Korea",
   email: "yoonbogam@gmail.com",
   github: "https://github.com/",
-  linkedin: "https://www.linkedin.com/",
   resumeUrl: "/resume.pdf",
 };
 
@@ -69,97 +64,75 @@ export const navLinks: NavLink[] = [
 ];
 
 export const heroContent: HeroContent = {
-  availabilityBadge: "이직 준비 중 · 즉시 합류 가능",
-  headline: "사용자 경험과 안정성을 함께 고민하는 프론트엔드 개발자입니다.",
+  availabilityBadge: "오픈 to 오퍼 / 이직 기회를 적극적으로 탐색 중입니다",
+  headline:
+    "안정성과 높은 신뢰도가 요구되는 국방 정보화 도메인에서 실무를 다져온 3년 차 웹 개발자 윤보감입니다.",
   subheadline:
-    "복잡한 요구사항을 명확한 구조로 정리하고, 성능과 유지보수성을 함께 챙기는 웹 개발자입니다. 문제 정의부터 기술적 의사결정, 성과 측정까지 전 과정에 책임을 갖고 임합니다.",
-  primaryCta: { label: "프로젝트 보기", href: "#projects" },
-  secondaryCta: { label: "연락하기", href: "#contact" },
+    "오차 없는 데이터 처리와 성능 최적화, 그리고 비즈니스 요구사항에 유연하게 대응하는 설계를 고민합니다.",
 };
 
 export const projects: Project[] = [
   {
-    id: "project-one",
-    title: "프로젝트명을 입력하세요",
-    period: "2024.01 — 2024.06",
-    summary: "한 줄로 프로젝트를 요약하는 카피를 작성하세요.",
-    problem:
-      "어떤 문제 상황이었는지, 어떤 지표나 사용자 불편이 있었는지 구체적으로 작성하세요.",
-    solution:
-      "문제를 해결하기 위해 어떤 기술적 선택과 의사결정을 했는지, 왜 그 방법을 택했는지 작성하세요.",
-    result:
-      "정량적/정성적 성과를 작성하세요. (예: 로딩 시간 40% 단축, 전환율 15% 증가 등)",
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
-    links: [
-      { label: "GitHub", href: "https://github.com/" },
-      { label: "Live Demo", href: "https://example.com" },
+    id: "naval-operation-system",
+    title: "해군 주요 함정 운용 지원 정보화 시스템 개발 및 유지보수",
+    category: "실무 프로젝트",
+    period: "2023.07 — 현재",
+    summary:
+      "폐쇄망 및 고신뢰성 환경에서의 대규모 함정 운용·관리 데이터 처리 및 웹 기능 고도화",
+    highlights: [
+      "직책 및 보안 등급에 따른 세분화된 접근 제어(RBAC) 및 보안 비즈니스 로직 구현",
+      "MSSQL 복잡 쿼리 튜닝 및 인덱스 최적화를 통한 대용량 이력·현황 데이터 조회 지연 해소",
+      "ASP.NET 기반의 안정적인 트랜잭션 처리로 데이터 누락 없는 견고한 웹 서비스 구축",
+      "제약된 폐쇄망 인프라 환경 내 장애 대응 및 유지보수성 향상을 위한 모듈 구조 개선",
     ],
+    stack: ["C#", "ASP.NET", "MSSQL", "JavaScript", "HTML/CSS", "IIS"],
   },
   {
-    id: "project-two",
-    title: "프로젝트명을 입력하세요",
-    period: "2023.06 — 2023.12",
-    summary: "한 줄로 프로젝트를 요약하는 카피를 작성하세요.",
-    problem: "어떤 문제 상황이었는지 구체적으로 작성하세요.",
-    solution: "어떤 기술적 해결/의사결정을 했는지 작성하세요.",
-    result: "어떤 성과를 냈는지 작성하세요.",
-    stack: ["React", "Node.js", "PostgreSQL"],
-    links: [{ label: "GitHub", href: "https://github.com/" }],
-  },
-  {
-    id: "project-three",
-    title: "프로젝트명을 입력하세요",
-    period: "2023.01 — 2023.05",
-    summary: "한 줄로 프로젝트를 요약하는 카피를 작성하세요.",
-    problem: "어떤 문제 상황이었는지 구체적으로 작성하세요.",
-    solution: "어떤 기술적 해결/의사결정을 했는지 작성하세요.",
-    result: "어떤 성과를 냈는지 작성하세요.",
-    stack: ["Vue.js", "Firebase"],
-    links: [{ label: "GitHub", href: "https://github.com/" }],
+    id: "personal-web-project",
+    title: "[준비 중] 웹 서비스 프로젝트",
+    category: "개인 프로젝트",
+    period: "2025 — 진행 중",
+    summary: "사용자 경험 중심의 반응형 웹 애플리케이션 (추후 업데이트 예정)",
+    highlights: [
+      "컴포넌트 기반 아키텍처 및 상태 관리 최적화",
+      "RESTful API 연동 및 반응형 UI 구현",
+    ],
+    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
   },
 ];
 
 export const experience: ExperienceItem[] = [
   {
-    id: "experience-one",
-    company: "회사명을 입력하세요",
-    role: "직무/직책을 입력하세요",
-    period: "2022.03 — 재직 중",
-    location: "서울",
+    id: "defense-informatization",
+    role: "Web Full-Stack Developer",
+    domain: "국방 정보화 시스템 개발 및 운영",
+    period: "2023.07 — 현재",
     highlights: [
-      "담당했던 주요 업무와 책임 범위를 작성하세요.",
-      "구체적인 성과나 개선 사례를 수치와 함께 작성하세요.",
-      "협업 방식이나 기술적 의사결정 경험을 작성하세요.",
-    ],
-  },
-  {
-    id: "experience-two",
-    company: "회사명을 입력하세요",
-    role: "직무/직책을 입력하세요",
-    period: "2020.01 — 2022.02",
-    location: "서울",
-    highlights: [
-      "담당했던 주요 업무와 책임 범위를 작성하세요.",
-      "구체적인 성과나 개선 사례를 수치와 함께 작성하세요.",
+      "보안 규정 및 까다로운 요구사항을 준수하는 고신뢰성 웹 기능 및 서비스 구축",
+      "MSSQL 복잡 쿼리 튜닝 및 대용량 조회 트래픽 최적화를 통한 성능 병목 개선",
+      "폐쇄망 및 제약된 인프라 환경에서의 안정적인 비즈니스 로직 설계 및 시스템 유지보수",
     ],
   },
 ];
 
 export const skillCategories: SkillCategory[] = [
   {
-    category: "Frontend",
-    items: ["TypeScript", "React", "Next.js", "Tailwind CSS", "Framer Motion"],
-  },
-  {
     category: "Backend",
-    items: ["Node.js", "Express", "PostgreSQL", "REST API"],
+    items: ["C#", "ASP.NET", "MSSQL", "IIS"],
   },
   {
-    category: "Tooling / DevOps",
-    items: ["Git", "Vercel", "Docker", "GitHub Actions"],
+    category: "Frontend",
+    items: ["JavaScript", "HTML/CSS", "TypeScript", "Next.js", "Tailwind CSS"],
   },
   {
-    category: "Collaboration",
-    items: ["Figma", "Notion", "Jira", "Agile/Scrum"],
+    category: "Tooling",
+    items: ["Git", "Vercel"],
   },
+];
+
+export const certifications: string[] = [
+  "정보처리기사",
+  "SQLD",
+  "ADsP",
+  "SW_L5",
 ];

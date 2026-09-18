@@ -29,13 +29,11 @@ export function Experience() {
 
               <div className="flex flex-wrap items-baseline justify-between gap-2">
                 <h3 className="text-lg font-semibold text-zinc-100">
-                  {item.role} · {item.company}
+                  {item.role}
                 </h3>
                 <span className="text-sm text-zinc-500">{item.period}</span>
               </div>
-              {item.location && (
-                <p className="mt-1 text-sm text-zinc-500">{item.location}</p>
-              )}
+              <p className="mt-1 text-sm text-zinc-500">{item.domain}</p>
 
               <ul className="mt-4 flex flex-col gap-2">
                 {item.highlights.map((highlight) => (

@@ -5,6 +5,7 @@ import { ArrowUpRight } from "lucide-react";
 import { projects, type Project } from "@/data/portfolio";
 import { Container } from "@/components/ui/Container";
 import { SectionHeading } from "@/components/ui/SectionHeading";
+import { Badge } from "@/components/ui/Badge";
 
 function ProjectCard({ project, index }: { project: Project; index: number }) {
   return (
@@ -17,6 +18,9 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
     >
       <div className="flex flex-wrap items-start justify-between gap-4">
         <div>
+          <Badge variant="accent" className="mb-3">
+            {project.category}
+          </Badge>
           <h3 className="text-xl font-semibold text-zinc-100">
             {project.title}
           </h3>
@@ -42,26 +46,14 @@ function ProjectCard({ project, index }: { project: Project; index: number }) {
 
       <p className="text-zinc-400">{project.summary}</p>
 
-      <dl className="grid gap-5 border-t border-zinc-800 pt-6 sm:grid-cols-3">
-        <div>
-          <dt className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            문제 정의
-          </dt>
-          <dd className="mt-2 text-sm text-zinc-300">{project.problem}</dd>
-        </div>
-        <div>
-          <dt className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            기술적 해결
-          </dt>
-          <dd className="mt-2 text-sm text-zinc-300">{project.solution}</dd>
-        </div>
-        <div>
-          <dt className="text-xs font-medium uppercase tracking-widest text-zinc-500">
-            성과
-          </dt>
-          <dd className="mt-2 text-sm text-zinc-300">{project.result}</dd>
-        </div>
-      </dl>
+      <ul className="flex flex-col gap-2 border-t border-zinc-800 pt-6">
+        {project.highlights.map((highlight) => (
+          <li key={highlight} className="flex gap-2 text-sm text-zinc-300">
+            <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
+            {highlight}
+          </li>
+        ))}
+      </ul>
 
       <div className="flex flex-wrap gap-2">
         {project.stack.map((tech) => (
