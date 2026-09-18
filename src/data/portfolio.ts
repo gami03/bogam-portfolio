@@ -84,14 +84,14 @@ export const heroContent: HeroContent = {
 export const projects: Project[] = [
   {
     id: "naval-operation-system",
-    title: "해군 주요 함정 운용 지원 정보화 시스템 개발 및 유지보수",
+    title: "국방 지휘·운용 지원 웹 시스템 개발 및 유지보수",
     category: "실무 프로젝트",
     period: "2023.07 — 현재",
     summary:
       "폐쇄망 및 고신뢰성 환경에서의 대규모 함정 운용·관리 데이터 처리 및 웹 기능 고도화",
     highlights: [
       "직책 및 보안 등급에 따른 세분화된 접근 제어(RBAC) 및 보안 비즈니스 로직 구현",
-      "MSSQL 복잡 쿼리 튜닝 및 인덱스 최적화를 통한 대용량 이력·현황 데이터 조회 지연 해소",
+      "MSSQL 복잡 쿼리 튜닝 및 인덱스 최적화를 통한 대규모 데이터 조회 지연 해소",
       "ASP.NET 기반의 안정적인 트랜잭션 처리로 데이터 누락 없는 견고한 웹 서비스 구축",
       "제약된 폐쇄망 인프라 환경 내 장애 대응 및 유지보수성 향상을 위한 모듈 구조 개선",
     ],
