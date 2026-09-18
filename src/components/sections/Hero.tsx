@@ -28,13 +28,22 @@ export function Hero() {
     >
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 bg-[radial-gradient(circle_at_top,_rgba(161,161,170,0.12),_transparent_55%)]"
+        className="pointer-events-none absolute inset-0 -z-20"
+        style={{
+          backgroundImage:
+            "radial-gradient(rgba(255, 255, 255, 0.1) 1px, transparent 1px)",
+          backgroundSize: "24px 24px",
+          maskImage:
+            "radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)",
+          WebkitMaskImage:
+            "radial-gradient(ellipse 60% 50% at 50% 0%, #000 70%, transparent 100%)",
+        }}
       />
       <div
         aria-hidden
-        className="pointer-events-none absolute inset-0 -z-10 flex items-center justify-center"
+        className="pointer-events-none absolute inset-0 -z-10 flex items-start justify-center pt-8"
       >
-        <div className="h-[300px] w-[500px] rounded-full bg-blue-500/10 blur-[120px]" />
+        <div className="h-[350px] w-[600px] rounded-full bg-gradient-to-tr from-blue-600/30 to-indigo-500/20 blur-[130px]" />
       </div>
 
       <Container className="relative flex flex-col gap-8 py-24">
@@ -52,18 +61,31 @@ export function Hero() {
           </Badge>
         </motion.div>
 
-        <motion.h1
-          initial={{ opacity: 0, y: 16 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ duration: 0.5, delay: 0.1 }}
-          className="max-w-3xl break-keep text-3xl font-semibold leading-tight text-zinc-100 sm:text-4xl lg:text-5xl"
-        >
-          {heroContent.headlinePrefix}
-          <span className="bg-gradient-to-r from-blue-400 via-sky-300 to-indigo-400 bg-clip-text text-transparent">
-            {heroContent.headlineHighlight}
-          </span>
-          {heroContent.headlineSuffix}
-        </motion.h1>
+        <div className="flex flex-col gap-3">
+          <motion.span
+            initial={{ opacity: 0, y: 12 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.05 }}
+            className="text-xs font-medium uppercase tracking-widest text-sky-400/80 sm:text-sm"
+          >
+            {heroContent.eyebrow}
+          </motion.span>
+
+          <motion.h1
+            initial={{ opacity: 0, y: 16 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.5, delay: 0.1 }}
+            className="max-w-3xl break-keep text-3xl font-semibold leading-tight text-zinc-100 sm:text-4xl lg:text-5xl"
+          >
+            <span className="block">{heroContent.headlineLine1}</span>
+            <span className="block">
+              <span className="bg-gradient-to-r from-sky-400 via-blue-400 to-indigo-300 bg-clip-text text-transparent">
+                {heroContent.headlineHighlight}
+              </span>
+              {heroContent.headlineSuffix}
+            </span>
+          </motion.h1>
+        </div>
 
         <motion.p
           initial={{ opacity: 0, y: 16 }}

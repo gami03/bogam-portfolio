@@ -18,7 +18,8 @@ export interface NavLink {
 
 export interface HeroContent {
   availabilityBadge: string;
-  headlinePrefix: string;
+  eyebrow: string;
+  headlineLine1: string;
   headlineHighlight: string;
   headlineSuffix: string;
   subheadline: string;
@@ -67,12 +68,12 @@ export const navLinks: NavLink[] = [
 
 export const heroContent: HeroContent = {
   availabilityBadge: "새로운 기회를 찾고 있습니다",
-  headlinePrefix:
-    "안정성과 높은 신뢰도가 요구되는 국방 정보화 도메인에서 실무를 다져온 ",
+  eyebrow: "High-Reliability & Defense Domain",
+  headlineLine1: "신뢰도 높은 시스템을 만드는",
   headlineHighlight: "3년 차 웹 개발자 윤보감",
   headlineSuffix: "입니다.",
   subheadline:
-    "오차 없는 데이터 처리와 성능 최적화, 그리고 비즈니스 요구사항에 유연하게 대응하는 설계를 고민합니다.",
+    "오차 없는 데이터 처리와 성능 최적화, 비즈니스 요구에 유연한 설계를 고민합니다.",
 };
 
 export const projects: Project[] = [
