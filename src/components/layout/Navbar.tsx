@@ -1,9 +1,10 @@
 "use client";
 
 import { useState } from "react";
-import { Github, Menu, X, FileText } from "lucide-react";
+import { Menu, X, FileText } from "lucide-react";
 import { navLinks, siteMeta } from "@/data/portfolio";
 import { Container } from "@/components/ui/Container";
+import { GithubIcon } from "@/components/ui/icons";
 
 export function Navbar() {
   const [isOpen, setIsOpen] = useState(false);
@@ -38,7 +39,7 @@ export function Navbar() {
             className="text-zinc-400 transition-colors hover:text-zinc-100"
             aria-label="GitHub"
           >
-            <Github size={18} />
+            <GithubIcon className="h-[18px] w-[18px]" />
           </a>
           <a
             href={siteMeta.resumeUrl}

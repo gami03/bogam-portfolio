@@ -1,6 +1,7 @@
-import { Github, Linkedin, Mail } from "lucide-react";
+import { Mail } from "lucide-react";
 import { siteMeta } from "@/data/portfolio";
 import { Container } from "@/components/ui/Container";
+import { GithubIcon, LinkedinIcon } from "@/components/ui/icons";
 
 export function Footer() {
   const year = new Date().getFullYear();
@@ -31,7 +32,7 @@ export function Footer() {
             aria-label="GitHub"
             className="transition-colors hover:text-zinc-200"
           >
-            <Github size={18} />
+            <GithubIcon className="h-[18px] w-[18px]" />
           </a>
           {siteMeta.linkedin && (
             <a
@@ -41,7 +42,7 @@ export function Footer() {
               aria-label="LinkedIn"
               className="transition-colors hover:text-zinc-200"
             >
-              <Linkedin size={18} />
+              <LinkedinIcon className="h-[18px] w-[18px]" />
             </a>
           )}
         </div>
