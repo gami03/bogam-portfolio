@@ -144,6 +144,28 @@ export const projects: Project[] = [
       "FCM",
     ],
   },
+  {
+    id: "fin-flow",
+    title: "Fin-Flow - 실시간 자동 가계부 & 자산 관리 PWA",
+    category: "개인 프로젝트",
+    period: "Next.js / 풀스택 PWA",
+    summary:
+      "Android 알림 웹훅 파이프라인 및 비정형 결제 텍스트 파싱 기반 실시간 자동 가계부 서비스",
+    highlights: [
+      "Android 금융 알림(SMS/푸시)을 실시간 인입하는 Webhook 엔드포인트 및 보안 토큰 인증(x-inbox-secret) 파이프라인 구축",
+      "줄바꿈·특수문자·복합 상호명이 혼재된 비정형 텍스트를 안정적으로 분해·정규화하는 결제 파서 엔진 및 디바운스 방어 로직 설계",
+      "클라이언트 렌더링 부하 및 중복 발화를 유발하던 로컬 타이머를 제거하고, Supabase Cron 기반 백엔드 단일 푸시 발송 아키텍처로 개선",
+      "Next.js App Router 기반 정적/동적 라우팅 최적화 및 월별 예산 임계치 실시간 계산 대시보드 UI 구현",
+    ],
+    stack: [
+      "Next.js",
+      "TypeScript",
+      "Supabase",
+      "PostgreSQL",
+      "Web Push API",
+      "Tailwind CSS",
+    ],
+  },
 ];
 
 export const experience: ExperienceItem[] = [
