@@ -34,6 +34,7 @@ export interface Project {
   highlights: string[];
   stack: string[];
   links?: { label: string; href: string }[];
+  videoUrl?: string;
 }
 
 export interface ExperienceItem {
@@ -119,6 +120,7 @@ export const projects: Project[] = [
       "Electron",
       "GitHub Pages",
     ],
+    videoUrl: "/videos/toeic-player-demo.mp4",
   },
   {
     id: "lookatme",
@@ -143,6 +145,7 @@ export const projects: Project[] = [
       "Cloud Functions",
       "FCM",
     ],
+    videoUrl: "/videos/lookatme-demo.mp4",
   },
   {
     id: "fin-flow",
@@ -165,6 +168,7 @@ export const projects: Project[] = [
       "Web Push API",
       "Tailwind CSS",
     ],
+    videoUrl: "/videos/fin-flow-demo.mp4",
   },
 ];
 
