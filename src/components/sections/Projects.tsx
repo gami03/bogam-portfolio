@@ -81,6 +81,32 @@ function ProjectCard({
   );
 }
 
+function ProjectDemoVideo({ videoUrl }: { videoUrl: string }) {
+  const [hasError, setHasError] = useState(false);
+
+  if (hasError) {
+    return (
+      <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50">
+        <p className="text-sm text-zinc-600">시연 영상 준비 중</p>
+      </div>
+    );
+  }
+
+  return (
+    <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50">
+      <video
+        src={videoUrl}
+        autoPlay
+        loop
+        muted
+        playsInline
+        onError={() => setHasError(true)}
+        className="h-full w-full object-cover"
+      />
+    </div>
+  );
+}
+
 function ProjectModal({
   project,
   onClose,
@@ -153,6 +179,10 @@ function ProjectModal({
             </div>
 
             <p className="break-keep text-zinc-400">{project.summary}</p>
+
+            {project.videoUrl && (
+              <ProjectDemoVideo key={project.id} videoUrl={project.videoUrl} />
+            )}
 
             <ul className="flex flex-col gap-2 border-t border-zinc-800 pt-6">
               {project.highlights.map((highlight) => (
