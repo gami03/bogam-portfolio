@@ -120,6 +120,30 @@ export const projects: Project[] = [
       "GitHub Pages",
     ],
   },
+  {
+    id: "lookatme",
+    title: "LookAtMe - 패밀리 라이프 체크인 앱",
+    category: "개인 프로젝트",
+    period: "Android / 실사용 운영 중",
+    summary:
+      "메신저 피로도 해소를 위한 비언어적 탭 체크인 및 Firebase 기반 실시간 가족 돌봄 모바일 플랫폼",
+    highlights: [
+      "텍스트 답장 부담 없는 1회 탭 안부 확인 및 비언어적 감정 공감 칩 피드 시스템 설계",
+      "결정론적 색상 매핑(MemberColorMapper) 알고리즘 도입: 본인 기준점 고정 및 가입일 타임스탬프 정렬로 그룹 내 아바타 색상 중복 0% 달성",
+      "Firebase Cloud Functions 백엔드 트리거를 활용한 멤버 탈퇴/내보내기 비동기 트랜잭션 처리 및 데이터 무결성 보장",
+      "고령층 대형 시스템 폰트 환경을 고려한 Material ChipGroup 반응형 UI 여백 미세 튜닝으로 레이아웃 깨짐 방지",
+      "롱클릭 제스처 햅틱 피드백, 6자리 초대 코드 클립보드 자동 감지 등 실사용자 피드백 기반 모바일 UX 고도화",
+    ],
+    stack: [
+      "Kotlin",
+      "Android",
+      "Coroutines",
+      "MVVM",
+      "Firebase",
+      "Cloud Functions",
+      "FCM",
+    ],
+  },
 ];
 
 export const experience: ExperienceItem[] = [
