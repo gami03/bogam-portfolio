@@ -98,16 +98,27 @@ export const projects: Project[] = [
     stack: ["C#", "ASP.NET", "MSSQL", "JavaScript", "HTML/CSS", "IIS"],
   },
   {
-    id: "personal-web-project",
-    title: "[준비 중] 웹 서비스 프로젝트",
+    id: "toeic-lc-smart-player",
+    title: "토익 LC 스마트 플레이어 (TOEIC LC Smart Player)",
     category: "개인 프로젝트",
-    period: "2025 — 진행 중",
-    summary: "사용자 경험 중심의 반응형 웹 애플리케이션 (추후 업데이트 예정)",
+    period: "2026.08 — 2026.09",
+    summary:
+      "OpenAI Whisper STT 기반 문항 자동 분할 및 실시간 대본 동기화 솔루션",
     highlights: [
-      "컴포넌트 기반 아키텍처 및 상태 관리 최적화",
-      "RESTful API 연동 및 반응형 UI 구현",
+      "30분 이상의 토익 LC 통음원을 Whisper STT 모델로 분석하여 문제별 시작·종료 타임스탬프 및 대본 메타데이터 자동 구조화",
+      "AI 분석 타임스탬프를 트리(Q1-3, Q4-6 등)로 매핑하여 탐색 딜레이 없는 0초 즉시 재생 및 timeupdate 이벤트 기반 실시간 대본 하이라이트 구현",
+      "AI 인식 오차를 보정하기 위한 Human-in-the-loop UI 설계 (±0.5초 정밀 구간 미세 조정 패널 및 인라인 대본 더블클릭 수정/저장)",
+      "PDF/전자칠판 병행 학습을 위한 초슬림 플로팅 미니 플레이어(F10 뷰 전환) 및 재생 상태 무중단 동기화",
+      "무거운 AI 연산 환경(Python/로컬)과 경량 웹 쇼케이스(GitHub Pages 데모)를 분리 설계하여 브라우저 접근성 최적화",
     ],
-    stack: ["Next.js", "TypeScript", "Tailwind CSS"],
+    stack: [
+      "OpenAI Whisper",
+      "Python",
+      "JavaScript",
+      "HTML5 Audio",
+      "Electron",
+      "GitHub Pages",
+    ],
   },
 ];
 
