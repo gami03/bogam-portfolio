@@ -84,25 +84,28 @@ function ProjectCard({
 function ProjectDemoVideo({ videoUrl }: { videoUrl: string }) {
   const [hasError, setHasError] = useState(false);
 
-  if (hasError) {
-    return (
-      <div className="relative flex aspect-video w-full items-center justify-center overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50">
-        <p className="text-sm text-zinc-600">시연 영상 준비 중</p>
-      </div>
-    );
-  }
-
   return (
-    <div className="relative aspect-video w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50">
-      <video
-        src={videoUrl}
-        autoPlay
-        loop
-        muted
-        playsInline
-        onError={() => setHasError(true)}
-        className="h-full w-full object-cover"
-      />
+    <div
+      className="relative block w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50"
+      style={{ aspectRatio: "16 / 9" }}
+    >
+      {/* padding-top fallback keeps the box's height on browsers without CSS aspect-ratio support (older in-app WebViews) */}
+      <div className="w-full pt-[56.25%]" />
+      {hasError ? (
+        <div className="absolute inset-0 flex items-center justify-center">
+          <p className="text-sm text-zinc-600">시연 영상 준비 중</p>
+        </div>
+      ) : (
+        <video
+          src={videoUrl}
+          autoPlay
+          loop
+          muted
+          playsInline
+          onError={() => setHasError(true)}
+          className="absolute inset-0 h-full w-full object-cover"
+        />
+      )}
     </div>
   );
 }
