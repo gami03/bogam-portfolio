@@ -83,25 +83,29 @@ function ProjectCard({
 
 function ProjectDemoVideo({ videoUrl }: { videoUrl: string }) {
   const [hasError, setHasError] = useState(false);
+  // Cache-bust so mobile browsers that aggressively cache a prior failed
+  // request re-fetch the asset instead of reusing a stale error response.
+  const cacheBustedSrc = `${videoUrl}?v=1`;
 
   return (
     <div
-      className="relative block w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50"
+      className="relative block min-h-[200px] w-full overflow-hidden rounded-xl border border-zinc-800 bg-zinc-950/50"
       style={{ aspectRatio: "16 / 9" }}
     >
       {/* padding-top fallback keeps the box's height on browsers without CSS aspect-ratio support (older in-app WebViews) */}
       <div className="w-full pt-[56.25%]" />
-      {hasError ? (
-        <div className="absolute inset-0 flex items-center justify-center">
-          <p className="text-sm text-zinc-600">시연 영상 준비 중</p>
-        </div>
-      ) : (
+      {/* Placeholder always stays mounted so the box never goes blank; the video overlays it once playable. */}
+      <div className="absolute inset-0 flex items-center justify-center">
+        <p className="text-sm text-zinc-600">시연 영상 준비 중</p>
+      </div>
+      {!hasError && (
         <video
-          src={videoUrl}
+          src={cacheBustedSrc}
           autoPlay
           loop
           muted
           playsInline
+          preload="auto"
           onError={() => setHasError(true)}
           className="absolute inset-0 h-full w-full object-cover"
         />
