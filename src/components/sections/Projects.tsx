@@ -184,19 +184,43 @@ function ProjectModal({
               <ProjectDemoVideo key={project.id} videoUrl={project.videoUrl} />
             )}
 
-            <ul className="flex flex-col gap-2 border-t border-zinc-800 pt-6">
-              {project.highlights.map((highlight) => (
-                <li
-                  key={highlight}
-                  className="flex gap-2 break-keep text-sm text-zinc-300"
-                >
-                  <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
-                  {highlight}
-                </li>
-              ))}
-            </ul>
+            <div className="flex flex-col gap-3 border-t border-zinc-800 pt-6">
+              <h4 className="text-sm font-semibold text-zinc-200">
+                문제 해결 및 성과
+              </h4>
+              <ul className="flex flex-col gap-2">
+                {project.highlights.map((highlight) => (
+                  <li
+                    key={highlight}
+                    className="flex gap-2 break-keep text-sm text-zinc-300"
+                  >
+                    <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
+                    {highlight}
+                  </li>
+                ))}
+              </ul>
+            </div>
 
-            <div className="flex flex-wrap gap-1.5">
+            {project.features && project.features.length > 0 && (
+              <div className="flex flex-col gap-3 border-t border-zinc-800 pt-6">
+                <h4 className="text-sm font-semibold text-zinc-200">
+                  핵심 구현 기능
+                </h4>
+                <ul className="flex flex-col gap-2">
+                  {project.features.map((feature) => (
+                    <li
+                      key={feature}
+                      className="flex gap-2 break-keep text-sm text-zinc-300"
+                    >
+                      <span className="mt-2 h-1 w-1 shrink-0 rounded-full bg-zinc-600" />
+                      {feature}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            )}
+
+            <div className="flex flex-wrap gap-1.5 border-t border-zinc-800 pt-6">
               {project.stack.map((tech) => (
                 <span
                   key={tech}
